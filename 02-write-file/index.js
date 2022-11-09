@@ -5,7 +5,7 @@ const output = fs.createWriteStream(path.join(__dirname, 'destination.txt'));
 
 stdout.write('Hi, enter something to the file: \n');
 stdin.on('data', line => {
-    if(line.toString() == 'exit\n') {
+    if(line.toString().trim() == 'exit') {
         console.log('The end of input, bye...');
         process.exit();
     }
